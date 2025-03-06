@@ -1,19 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
+using System.Collections;
 
 public class GunBase : MonoBehaviour
 {
     [Header("Gun Settings")]
     public int magazineSize = 30;
     public int maxReserveAmmo = 120;
-    public float fireRate = 0.1f; // Time between shots (higher = slower fire rate)
+    public float fireRate = 0.1f;
     public float reloadTime = 1.5f;
 
     [Header("References")]
-    public Transform gunPoint; // The point where bullets spawn
-    public GameObject bulletPrefab; // Assign bullet prefab in Inspector
+    public Transform gunPoint;
+    public GameObject bulletPrefab;
 
     private int currentAmmoInMag;
     private int currentReserveAmmo;
@@ -28,6 +26,8 @@ public class GunBase : MonoBehaviour
 
     void Update()
     {
+        RotateGunTowardsMouse();
+
         if (Input.GetMouseButton(0) && !isShooting && !isReloading)
         {
             if (currentAmmoInMag > 0)
@@ -46,13 +46,24 @@ public class GunBase : MonoBehaviour
         }
     }
 
+    private void RotateGunTowardsMouse()
+    {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 direction = (mousePos - transform.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle + 90f);
+    }
+
     private IEnumerator Shoot()
     {
         isShooting = true;
 
-        // Fire bullet
-        GameObject bullet = Instantiate(bulletPrefab, gunPoint.position, gunPoint.rotation);
-        // You can add bullet force logic here
+        GameObject bullet = Instantiate(bulletPrefab, gunPoint.position, transform.rotation);
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
+        if (bulletScript != null)
+        {
+            bulletScript.SetDamage(10); // Example damage value
+        }
 
         currentAmmoInMag--;
         yield return new WaitForSeconds(fireRate);
