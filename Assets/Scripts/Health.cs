@@ -6,6 +6,10 @@ public class Health : MonoBehaviour
     private float currentHealth;     // Current health of the entity
     public bool IsDead => currentHealth <= 0; // Checks if the entity is dead
 
+    // References
+    private SpriteRenderer spriteRenderer;
+    private Rigidbody2D rb;
+
     // Event that will be triggered when health reaches 0 (death)
     public delegate void OnDeath();
     public event OnDeath DeathEvent;
@@ -13,29 +17,31 @@ public class Health : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;  // Set the current health to the max health at the start
+
+        // Get the SpriteRenderer and Rigidbody2D (for death animation)
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
+
+        if (rb != null)
+        {
+            rb.isKinematic = true;  // Disable physics initially to prevent falling until death
+        }
     }
 
     // Method to take damage
     public void TakeDamage(float damage)
     {
-        if (IsDead) return;  // If already dead, no damage is taken
+        if (IsDead) return;
 
         currentHealth -= damage;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);  // Ensure health doesn't go below 0
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        Debug.Log($"{gameObject.name} took {damage} damage! Current Health: {currentHealth}");
 
         if (IsDead)
         {
             Die();
         }
-    }
-
-    // Method to heal the entity (optional)
-    public void Heal(float healAmount)
-    {
-        if (IsDead) return;  // Can't heal if dead
-
-        currentHealth += healAmount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);  // Ensure health doesn't exceed max health
     }
 
     // Called when health reaches 0 (death)
@@ -46,7 +52,24 @@ public class Health : MonoBehaviour
         // Trigger death event (useful for custom death logic)
         DeathEvent?.Invoke();
 
-        // Placeholder for any additional death logic you want to add here
-        // For example: disabling movement, playing death sound, etc.
+        // Change color to a death color (red or any color you like)
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = Color.red; // Change color to red, you can change this to any color
+        }
+
+        // If the enemy has a Rigidbody2D, apply physics to make it fall over
+        if (rb != null)
+        {
+            rb.isKinematic = false;  // Enable physics to allow falling
+            rb.gravityScale = 0.3f;     // Allow gravity to pull the enemy down
+            rb.AddTorque(100f);       // Add torque to make the enemy fall over
+        }
+
+        // Optionally, you could add a death animation or sound here before destroying the object
+        // Example: play a death animation
+
+        // Destroy the enemy after some time (to allow the death effects to be visible)
+        Destroy(gameObject, 1f);  // Delay the destruction for 1 second (adjust as needed)
     }
 }

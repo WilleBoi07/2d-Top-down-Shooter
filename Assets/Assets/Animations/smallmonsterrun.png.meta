@@ -1,0 +1,540 @@
+fileFormatVersion: 2
+guid: eaa69e37db84da8419d747641ef7e7c2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5971769190589405679
+    second: smallmonsterrun_0
+  - first:
+      213: -4615080638758028463
+    second: smallmonsterrun_1
+  - first:
+      213: 1579394245491017646
+    second: smallmonsterrun_2
+  - first:
+      213: 5146918069081295477
+    second: smallmonsterrun_3
+  - first:
+      213: 2274836427682137504
+    second: smallmonsterrun_4
+  - first:
+      213: 7209699998614859386
+    second: smallmonsterrun_5
+  - first:
+      213: -384965673013780938
+    second: smallmonsterrun_6
+  - first:
+      213: -1704498326072630246
+    second: smallmonsterrun_7
+  - first:
+      213: 6177749319784448044
+    second: smallmonsterrun_8
+  - first:
+      213: 5474015235363265389
+    second: smallmonsterrun_9
+  - first:
+      213: -4407410035456709804
+    second: smallmonsterrun_10
+  - first:
+      213: 1571532062042956521
+    second: smallmonsterrun_11
+  - first:
+      213: 2721578885227094677
+    second: smallmonsterrun_12
+  - first:
+      213: 1390958625191203936
+    second: smallmonsterrun_13
+  - first:
+      213: 2989375893239243088
+    second: smallmonsterrun_14
+  - first:
+      213: -3021297806123072783
+    second: smallmonsterrun_15
+  - first:
+      213: 1253182085192085997
+    second: smallmonsterrun_16
+  - first:
+      213: 7474840805139653154
+    second: smallmonsterrun_17
+  - first:
+      213: -6190697489624367372
+    second: smallmonsterrun_18
+  - first:
+      213: 8643753502670222170
+    second: smallmonsterrun_19
+  - first:
+      213: -1708700001015019042
+    second: smallmonsterrun_20
+  - first:
+      213: -3014867273711273632
+    second: smallmonsterrun_21
+  - first:
+      213: 8653943920124523644
+    second: smallmonsterrun_22
+  - first:
+      213: 290594051570150207
+    second: smallmonsterrun_23
+  - first:
+      213: 5268304678204611857
+    second: smallmonsterrun_24
+  - first:
+      213: -4238943624668663424
+    second: smallmonsterrun_25
+  - first:
+      213: 4996458970161312037
+    second: smallmonsterrun_26
+  - first:
+      213: 6221557818949036962
+    second: smallmonsterrun_27
+  - first:
+      213: -5307270928527261362
+    second: smallmonsterrun_28
+  - first:
+      213: -3440039606534004041
+    second: smallmonsterrun_29
+  - first:
+      213: -1697952016932290193
+    second: smallmonsterrun_30
+  - first:
+      213: 5469987751512717503
+    second: smallmonsterrun_31
+  - first:
+      213: 8245497581648387222
+    second: smallmonsterrun_32
+  - first:
+      213: 4143847629870134629
+    second: smallmonsterrun_33
+  - first:
+      213: -425718538461317190
+    second: smallmonsterrun_34
+  - first:
+      213: -3723842667013707412
+    second: smallmonsterrun_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: smallmonsterrun_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1920
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 116eb4a9f83002da0800000000000000
+      internalID: -5971769190589405679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smallmonsterrun_1
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1920
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15b7b0d5c90f3ffb0800000000000000
+      internalID: -4615080638758028463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smallmonsterrun_2
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1920
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea7c9c2c2b22be510800000000000000
+      internalID: 1579394245491017646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smallmonsterrun_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57a41abd6b68d6740800000000000000
+      internalID: 5146918069081295477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smallmonsterrun_4
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1280
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a5cc1aada7d19f10800000000000000
+      internalID: 2274836427682137504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smallmonsterrun_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1280
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7ea29a33fffd0460800000000000000
+      internalID: 7209699998614859386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smallmonsterrun_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63e5b4192c358aaf0800000000000000
+      internalID: -384965673013780938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smallmonsterrun_7
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 640
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a146132adc76858e0800000000000000
+      internalID: -1704498326072630246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smallmonsterrun_8
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 640
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c20c9257646cbb550800000000000000
+      internalID: 6177749319784448044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smallmonsterrun_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b57ee9adb97fb40800000000000000
+      internalID: 5474015235363265389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smallmonsterrun_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45b6c199cebb5d2c0800000000000000
+      internalID: -4407410035456709804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smallmonsterrun_11
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e2253785143fc510800000000000000
+      internalID: 1571532062042956521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f735e79cf53897e4285dbe294cb97c2d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      smallmonsterrun_0: -5971769190589405679
+      smallmonsterrun_1: -4615080638758028463
+      smallmonsterrun_10: -4407410035456709804
+      smallmonsterrun_11: 1571532062042956521
+      smallmonsterrun_2: 1579394245491017646
+      smallmonsterrun_3: 5146918069081295477
+      smallmonsterrun_4: 2274836427682137504
+      smallmonsterrun_5: 7209699998614859386
+      smallmonsterrun_6: -384965673013780938
+      smallmonsterrun_7: -1704498326072630246
+      smallmonsterrun_8: 6177749319784448044
+      smallmonsterrun_9: 5474015235363265389
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

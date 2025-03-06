@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
             Debug.LogError("Rigidbody2D is missing on bullet!");
         }
 
-        Destroy(gameObject, lifeTime);
+        Destroy(gameObject, lifeTime); // Destroy the bullet after lifetime expires
     }
 
     public void SetDamage(float dmg)
@@ -27,24 +27,20 @@ public class Bullet : MonoBehaviour
         damage = dmg;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            Health enemyHealth = other.GetComponent<Health>();
-            if (enemyHealth != null)
-            {
-                enemyHealth.TakeDamage(damage);
-            }
-            Destroy(gameObject);
-        }
-    }
-
+    // This function handles bullet collision with any object
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.collider.isTrigger)
+        // Check if the collision is with an enemy
+        if (collision.collider.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+            Health enemyHealth = collision.collider.GetComponent<Health>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(damage); // Apply damage to the enemy
+            }
         }
+
+        // Destroy the bullet when it hits anything (including walls, non-trigger colliders)
+        Destroy(gameObject);
     }
 }

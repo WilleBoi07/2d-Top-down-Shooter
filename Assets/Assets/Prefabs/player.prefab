@@ -216,7 +216,7 @@ Transform:
   m_GameObject: {fileID: 2710734905342389443}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.07751943, y: 0.4926534, z: 0}
+  m_LocalPosition: {x: -0.07751943, y: -0.486, z: 0}
   m_LocalScale: {x: 7.0472164, y: 1.2347203, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -349,10 +349,10 @@ GameObject:
   - component: {fileID: 265961688316491906}
   - component: {fileID: 4293708428982984134}
   - component: {fileID: 3062491413613488589}
-  - component: {fileID: 975713794034998620}
   - component: {fileID: 356253350612383770}
   - component: {fileID: 7855085648740531765}
   - component: {fileID: 6801791843023264368}
+  - component: {fileID: 6022895438881976325}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -460,42 +460,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &975713794034998620
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8546664752068725068}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0.0071991384, y: 0.015519559}
-  m_Radius: 0.29986733
 --- !u!114 &356253350612383770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,6 +502,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+--- !u!58 &6022895438881976325
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8546664752068725068}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.10932073}
+  m_Radius: 0.3979874
 --- !u!1 &8694905015201813805
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,4 +583,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e677466acb10b746a342e866140cd66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons: []
+  weapons:
+  - {fileID: 3501804695033862161}

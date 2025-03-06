@@ -16,6 +16,8 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        // Ensure the Rigidbody2D is dynamic
+        rb.bodyType = RigidbodyType2D.Dynamic;  // This ensures it's a dynamic Rigidbody2D
     }
 
     void Update()
@@ -48,8 +50,8 @@ public class Movement : MonoBehaviour
         // Rotate towards the mouse
         RotateTowardsMouse();
 
-        // Move the player
-        rb.linearVelocity = movementInput * speed;
+        // Move the player using velocity (physics-based)
+        rb.linearVelocity = new Vector2(movementInput.x * speed, movementInput.y * speed);  // Apply velocity based on input
     }
 
     void RotateTowardsMouse()
