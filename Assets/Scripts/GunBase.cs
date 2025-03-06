@@ -8,6 +8,7 @@ public class GunBase : MonoBehaviour
     public int maxReserveAmmo = 120;
     public float fireRate = 0.1f;
     public float reloadTime = 1.5f;
+    [SerializeField] int dmg = 10;
 
     [Header("References")]
     public Transform gunPoint;
@@ -62,7 +63,7 @@ public class GunBase : MonoBehaviour
         Bullet bulletScript = bullet.GetComponent<Bullet>();
         if (bulletScript != null)
         {
-            bulletScript.SetDamage(10); // Example damage value
+            bulletScript.SetDamage(dmg); // Example damage value
         }
 
         currentAmmoInMag--;

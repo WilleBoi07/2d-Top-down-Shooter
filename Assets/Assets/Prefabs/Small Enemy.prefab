@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4084458684456959606}
   - component: {fileID: 5661011491701414344}
   m_Layer: 0
-  m_Name: Medium enemy
+  m_Name: Small Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8010dc72f883f4d468497975367164cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 20
 --- !u!60 &4084458684456959606
 PolygonCollider2D:
   m_ObjectHideFlags: 0
