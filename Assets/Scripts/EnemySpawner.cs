@@ -1,12 +1,12 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    public Transform spawner;  // Reference to the spawner object
-    public Transform player;   // Reference to the player (still needed for AI)
-    public float spawnRadius = 5f;
+    public List<Collider2D> spawnAreas = new List<Collider2D>();  // List of spawn area colliders
+    public Transform player;      // Reference to the player (still needed for AI)
     public int enemyCount = 4;
     public float spawnInterval = 7.5f; // Time between waves
     public bool isSpawning = false;
@@ -39,8 +39,10 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < enemyCount; i++)
         {
-            // Spawn around the spawner, not the player
-            Vector2 spawnPosition = (Vector2)spawner.position + Random.insideUnitCircle.normalized * spawnRadius;
+            // Choose a random collider from the list
+            Collider2D randomCollider = spawnAreas[Random.Range(0, spawnAreas.Count)];
+            // Spawn within the random spawn area collider
+            Vector2 spawnPosition = GetRandomPositionInCollider(randomCollider);
             GameObject newEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
 
             // Set up the enemy AI with player reference (keep player reference for AI behavior)
@@ -52,5 +54,18 @@ public class EnemySpawner : MonoBehaviour
                 enemyAI.isWaveEnemy = true;
             }
         }
+    }
+
+    // Function to get a random position within the bounds of the given collider
+    private Vector2 GetRandomPositionInCollider(Collider2D collider)
+    {
+        // Get the bounds of the collider (x, y position and size)
+        Bounds bounds = collider.bounds;
+
+        // Generate a random position within the bounds
+        float randomX = Random.Range(bounds.min.x, bounds.max.x);
+        float randomY = Random.Range(bounds.min.y, bounds.max.y);
+
+        return new Vector2(randomX, randomY);
     }
 }

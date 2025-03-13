@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;  // Add the TMPro namespace
 using System.Collections;
 
 public class GunBase : MonoBehaviour
@@ -14,6 +15,9 @@ public class GunBase : MonoBehaviour
     public Transform gunPoint;
     public GameObject bulletPrefab;
 
+    [Header("UI References")]
+    public TextMeshProUGUI ammoText; // Changed to TextMeshProUGUI for TMP support
+
     private int currentAmmoInMag;
     private int currentReserveAmmo;
     private bool isShooting = false;
@@ -23,6 +27,8 @@ public class GunBase : MonoBehaviour
     {
         currentAmmoInMag = magazineSize;
         currentReserveAmmo = maxReserveAmmo;
+
+        UpdateAmmoUI(); // Update ammo UI on start
     }
 
     void Update()
@@ -52,14 +58,15 @@ public class GunBase : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 direction = (mousePos - transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, angle + 90f);
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
     }
 
     private IEnumerator Shoot()
     {
         isShooting = true;
 
-        GameObject bullet = Instantiate(bulletPrefab, gunPoint.position, transform.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, gunPoint.position, transform.parent.rotation);
+       // bullet.transform.up = 
         Bullet bulletScript = bullet.GetComponent<Bullet>();
         if (bulletScript != null)
         {
@@ -67,6 +74,8 @@ public class GunBase : MonoBehaviour
         }
 
         currentAmmoInMag--;
+        UpdateAmmoUI();  // Update the ammo display after shooting
+
         yield return new WaitForSeconds(fireRate);
 
         isShooting = false;
@@ -85,6 +94,8 @@ public class GunBase : MonoBehaviour
         currentAmmoInMag += bulletsToReload;
         currentReserveAmmo -= bulletsToReload;
 
+        UpdateAmmoUI();  // Update the ammo display after reload
+
         Invoke(nameof(FinishReload), reloadTime);
     }
 
@@ -97,5 +108,15 @@ public class GunBase : MonoBehaviour
     public void AddAmmo(int amount)
     {
         currentReserveAmmo = Mathf.Min(currentReserveAmmo + amount, maxReserveAmmo);
+        UpdateAmmoUI();  // Update the ammo display after adding ammo
+    }
+
+    // Function to update the ammo display
+    private void UpdateAmmoUI()
+    {
+        if (ammoText != null)
+        {
+            ammoText.text = $"Ammo: {currentAmmoInMag}/{magazineSize} | Reserve: {currentReserveAmmo}/{maxReserveAmmo}";
+        }
     }
 }

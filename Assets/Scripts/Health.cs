@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using static EnemyAI;
 
 public class Health : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class Health : MonoBehaviour
     // References
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
+    public Animator Anim;
 
     // Event that will be triggered when health reaches 0 (death)
     public delegate void OnDeath();
@@ -52,6 +55,20 @@ public class Health : MonoBehaviour
         // Trigger death event (useful for custom death logic)
         DeathEvent?.Invoke();
 
+        // Get the EnemyAI component attached to this GameObject
+        EnemyAI enemyAI = GetComponent<EnemyAI>();
+
+        // Ensure that the EnemyAI component is present
+        if (enemyAI != null)
+        {
+            // Set the enemy's state to Death
+            enemyAI.currentState = EnemyAI.EnemyState.Death;
+        }
+        else
+        {
+            Debug.LogError("EnemyAI component is missing!");
+        }
+
         // Change color to a death color (red or any color you like)
         if (spriteRenderer != null)
         {
@@ -66,10 +83,17 @@ public class Health : MonoBehaviour
             rb.AddTorque(100f);       // Add torque to make the enemy fall over
         }
 
+        // Stop all movement and actions since the enemy is dead
+        Anim.SetBool("run", false); // Stop running animation if applicable
+        Anim.SetBool("death", true);  // Play death animation
+
         // Optionally, you could add a death animation or sound here before destroying the object
-        // Example: play a death animation
+        // Example: play a death animation or sound effect
 
         // Destroy the enemy after some time (to allow the death effects to be visible)
         Destroy(gameObject, 1f);  // Delay the destruction for 1 second (adjust as needed)
     }
+
+
+
 }

@@ -6,13 +6,14 @@ public class Bullet : MonoBehaviour
     public float lifeTime = 2f;
     private Rigidbody2D rb;
     private float damage;
+    public float alertRadius = 7f; // Larger than the enemy's running detection
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = -transform.up * speed; // Move the bullet forward based on its rotation
+            rb.linearVelocity = transform.up * speed; // Move the bullet forward
         }
         else
         {
@@ -27,20 +28,31 @@ public class Bullet : MonoBehaviour
         damage = dmg;
     }
 
-    // This function handles bullet collision with any object
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Check if the collision is with an enemy
         if (collision.collider.CompareTag("Enemy"))
         {
             Health enemyHealth = collision.collider.GetComponent<Health>();
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(damage); // Apply damage to the enemy
+                enemyHealth.TakeDamage(damage); // Apply damage to enemy
             }
         }
 
-        // Destroy the bullet when it hits anything (including walls, non-trigger colliders)
+        AlertNearbyEnemies(); // Notify enemies of the shot
         Destroy(gameObject);
+    }
+
+    private void AlertNearbyEnemies()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, alertRadius);
+        foreach (Collider2D collider in hitEnemies)
+        {
+            EnemyAI enemy = collider.GetComponent<EnemyAI>();
+            if (enemy != null && enemy.currentState == EnemyAI.EnemyState.Dormant)
+            {
+                enemy.StartWakingUp(); // Notify dormant enemies
+            }
+        }
     }
 }
