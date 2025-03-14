@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -46,6 +47,11 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth < 0)
         {
             currentHealth = 0;
+        }
+
+        if (currentHealth == 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         // Optionally, you can add a "Game Over" check if health reaches 0
